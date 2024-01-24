@@ -1,33 +1,16 @@
-import Koa from 'koa'
-import Router from 'koa-router'
-import { graphqlHTTP } from 'koa-graphql'
-import { buildSchema } from 'graphql'
+import http from 'http';
 
-const app = new Koa()
-const router = new Router()
+import { app } from './server/app';
+import { config } from './config';
+import { connectDatabase } from './database';
 
-const schema = buildSchema(`
-type Query {
-    hello: String
-}
-`)
 
-const root = {
-    hello: _ => "Hello GraphQL"
-}
+(async () => {
+    await connectDatabase();
 
-router.all('/graphql', graphqlHTTP({
-    schema,
-    graphiql: true,
-    rootValue: root
-}));
+    const server = http.createServer(app.callback());
 
-app.use(router.routes())
-app.use(router.allowedMethods())
-
-app.use(async ctx => {
-    ctx.body = 'Hello World'
-})
-
-const PORT = 3000
-app.listen(PORT)
+    server.listen(config.PORT, () => {
+        console.log(`Server running on port:${config.PORT}`);
+    });
+})();
