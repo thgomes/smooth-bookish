@@ -6,7 +6,7 @@
         "dev": "tsx watch src/index.ts"
     },
     "dependencies": {
-        "@types/bcryptjs": "^2.4.6",
+        "@entria/graphql-mongo-helpers": "^1.1.2",
         "@types/mongoose": "^5.11.97",
         "bcryptjs": "^2.4.3",
         "graphql": "^16.8.1",
