@@ -28,6 +28,7 @@
                 "test/**/*.tsx"
             ]
         },
+        "schema": {},
         "lint": {},
         "dev": {
             "cache": false,

@@ -6,6 +6,7 @@
   "scripts": {
     "lint": "turbo lint",
     "dev": "turbo dev",
+    "schema": "turbo run schema"
   },
   "keywords": [],
   "author": "",

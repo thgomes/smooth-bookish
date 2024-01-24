@@ -1,0 +1,35 @@
+type Query {
+  hello: String
+}
+
+type Mutation {
+  UserRegister(input: UserRegisterInput!): UserRegisterPayload
+}
+
+type UserRegisterPayload {
+  user: User
+  clientMutationId: String
+}
+
+"""Represents a user"""
+type User implements Node {
+  """The ID of an object"""
+  id: ID!
+  name: String!
+  email: String!
+  createdAt: String
+  updatedAt: String
+}
+
+"""An object with an ID"""
+interface Node {
+  """The id of the object."""
+  id: ID!
+}
+
+input UserRegisterInput {
+  name: String!
+  email: String!
+  password: String!
+  clientMutationId: String
+}
