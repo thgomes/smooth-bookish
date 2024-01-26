@@ -1,22 +1,22 @@
-import { graphql } from 'graphql';
+import { graphql } from 'graphql'
 
-import { schema } from '../schema/schema';
-import { getContext } from '../server/getContext';
+import { schema } from '../schema/schema'
+import { getContext } from '../server/getContext'
 
 async function runGraphql(source, input) {
-    const rootValue = {};
-    const contextValue = getContext();
-    const variableValues = { input }
+  const rootValue = {}
+  const contextValue = getContext()
+  const variableValues = { input }
 
-    const result = await graphql({
-        schema,
-        rootValue,
-        contextValue,
-        source,
-        variableValues,
-    });
+  const result = await graphql({
+    schema,
+    rootValue,
+    contextValue,
+    source,
+    variableValues,
+  })
 
-    return { errors: result.errors, data: result.data }
+  return { errors: result.errors, data: result.data }
 }
 
 export { runGraphql }

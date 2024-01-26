@@ -4,16 +4,16 @@ import { registerLoader } from '../loader/loaderRegister'
 import { UserModel } from './UserModel'
 
 const { Wrapper, getLoader, clearCache, load, loadAll } = createLoader({
-    model: UserModel,
-    loaderName: 'UserLoader'
+  model: UserModel,
+  loaderName: 'UserLoader',
 })
 
 registerLoader('UserLoader', getLoader)
 
 export const UserLoader = {
-    User: Wrapper,
-    getLoader,
-    clearCache,
-    load,
-    loadAll,
+  User: Wrapper,
+  getLoader,
+  clearCache,
+  load,
+  loadAll,
 }

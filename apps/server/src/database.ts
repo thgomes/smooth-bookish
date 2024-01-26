@@ -1,13 +1,13 @@
-import mongoose from 'mongoose';
+import mongoose from 'mongoose'
 
-import { config } from './config';
+import { config } from './config'
 
 async function connectDatabase() {
-    mongoose.connection.on('close', () =>
-        console.log('Database connection closed.')
-    );
+  mongoose.connection.on('close', () =>
+    console.log('Database connection closed.'),
+  )
 
-    await mongoose.connect(config.MONGO_URI);
+  await mongoose.connect(config.MONGO_URI)
 }
 
-export { connectDatabase };
+export { connectDatabase }

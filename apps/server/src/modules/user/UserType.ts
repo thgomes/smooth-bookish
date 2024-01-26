@@ -6,33 +6,33 @@ import { UserLoader } from './UserLoader'
 import { IUser } from './UserModel'
 
 const UserType = new GraphQLObjectType<IUser>({
-    name: 'User',
-    description: 'Represents a user',
-    fields: () => ({
-        id: globalIdField('User'),
-        name: {
-            type: new GraphQLNonNull(GraphQLString),
-            resolve: user => user.name,
-        },
-        email: {
-            type: new GraphQLNonNull(GraphQLString),
-            resolve: user => user.email,
-        },
-        createdAt: {
-            type: GraphQLString,
-            resolve: (user) => user.createdAt.toISOString(),
-        },
-        updatedAt: {
-            type: GraphQLString,
-            resolve: (user) => user.updatedAt.toISOString(),
-        },
-    }),
-    interfaces: () => [nodeInterface],
+  name: 'User',
+  description: 'Represents a user',
+  fields: () => ({
+    id: globalIdField('User'),
+    name: {
+      type: new GraphQLNonNull(GraphQLString),
+      resolve: (user) => user.name,
+    },
+    email: {
+      type: new GraphQLNonNull(GraphQLString),
+      resolve: (user) => user.email,
+    },
+    createdAt: {
+      type: GraphQLString,
+      resolve: (user) => user.createdAt.toISOString(),
+    },
+    updatedAt: {
+      type: GraphQLString,
+      resolve: (user) => user.updatedAt.toISOString(),
+    },
+  }),
+  interfaces: () => [nodeInterface],
 })
 
 const UserConnection = connectionDefinitions({
-    name: 'User',
-    nodeType: UserType,
+  name: 'User',
+  nodeType: UserType,
 })
 
 registerTypeLoader(UserType, UserLoader.load)

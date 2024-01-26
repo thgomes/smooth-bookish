@@ -1,5 +1,5 @@
-import { UserRegisterMutation } from './UserRegisterMutation';
+import { UserRegisterMutation } from './UserRegisterMutation'
 
 export const userMutations = {
-    UserRegister: UserRegisterMutation,
-};
+  UserRegister: UserRegisterMutation,
+}
