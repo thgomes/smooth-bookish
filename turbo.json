@@ -18,6 +18,7 @@
             ]
         },
         "test": {},
+        "build-css": {},
         "schema": {},
         "lint": {},
         "dev": {
