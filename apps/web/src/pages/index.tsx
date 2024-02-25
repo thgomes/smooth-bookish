@@ -2,36 +2,13 @@ import React from 'react'
 import Image from 'next/image'
 
 import Footer from '../components/Footer'
+import ExternalHeader from '../components/ExternalHeader'
 
 const LandingPage = () => {
   return (
     <div className="bg-indigo-50">
       <div className="bg-gradient-to-b from-indigo-950 to-indigo-200">
-        <header className="text-indigo-50 p-4">
-          <div className="max-w-screen-xl mx-auto">
-            <nav className="flex items-center justify-between">
-              <div className="text-xl font-semibold">Logo/Brand</div>
-              <ul className="flex space-x-4 font-bold">
-                <li>
-                  <a
-                    className="hover:text-indigo-300 duration-500"
-                    href="#home"
-                  >
-                    sign-up
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="hover:text-indigo-400 duration-500"
-                    href="#about"
-                  >
-                    login
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </header>
+        <ExternalHeader />
         <div className="flex flex-col items-center max-w-4xl mx-auto h-screen justify-center">
           <h1 className="text-zinc-900 text-6xl font-black tracking-tight text-center">
             Rapidly write book reviews and discuss your favorite redings.
@@ -104,7 +81,6 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-
       <Footer />
     </div>
   )
